@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 
-export const isFalsy = (value:any) => (value === 0 ? false : !value); //!!value取其布尔值的意思
+export const isFalsy = (value: any) => (value === 0 ? false : !value); //!!value取其布尔值的意思
 //清除对象的空值
-export const cleanObject = (object:object) => {
+export const cleanObject = (object: object) => {
     const result = { ...object };
     Object.keys(result).forEach((key) => {
         //@ts-ignore
@@ -15,7 +15,7 @@ export const cleanObject = (object:object) => {
     });
     return result;
 };
-export const useMount = (callback:()=>void) => {
+export const useMount = (callback: () => void) => {
     useEffect(() => {
         callback();
     }, []);
@@ -35,7 +35,7 @@ export const useMount = (callback:()=>void) => {
 // log()
 // log()
 // log()
-export const useDebounce = (value:any, delay?:number) => {
+export const useDebounce = (value: any, delay?: number): any => {
     const [debounceValue, setDebouncedValue] = useState(value);
     useEffect(() => {
         //每次在value或delay变化后设置一个定时器
