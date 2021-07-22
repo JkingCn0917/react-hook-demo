@@ -18,7 +18,7 @@ export const cleanObject = (object: object) => {
 export const useMount = (callback: () => void) => {
     useEffect(() => {
         callback();
-    }, []);
+    }, []);//eslint-disable-line react-hooks/exhaustive-deps
 };
 // const debounce = (func,delay)=>{
 //     let timeout;
